@@ -20,6 +20,8 @@ namespace Nasa
 
         public static IList<Photo> GetMarsRoverPhotos(string earthDate)
         {
+            // TODO: Should use asnyc here in case of slowness or other network issues
+
             var photos = new List<Photo>();
 
             var parameters = $"earth_date={earthDate}&api_key={API_KEY}";
