@@ -27,7 +27,8 @@ namespace Nasa.Pages
 
             foreach (var dateTime in ConvertDates(GetDateStringsFromFile()))
             {
-                Photos.AddRange(NasaApi.GetMarsRoverPhotos(dateTime.ToString("yyyy-M-d")));
+                var photos = NasaApi.GetMarsRoverPhotos(dateTime.ToString("yyyy-M-d"));
+                Photos.AddRange(photos);
             }
 
             // Hard coded example
